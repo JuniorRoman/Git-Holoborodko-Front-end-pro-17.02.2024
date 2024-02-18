@@ -20,7 +20,7 @@ let num = prompt("Введіть п'ять чисел");
   alert("Введене число меньше чим 5");
 } else if (num.length > 5) {
   alert("Введене число більше чим 5");
-} else if (num.length == 5) {  
+} else {  
   let char = num.split('');
   let str = String(char);
   let charStr = str.replaceAll(',', ' ');
