@@ -1,12 +1,12 @@
 confirm(
-  "Для розрахунку кількості секунд в годинах потрібно буде ввести будь-яку кількість годин "
+  "Для того щоб розрахувати середнє арифметичне від чисел, пропоную Вам ввести 3 різні числа"
 );
-let num = +prompt(
-  "Для розрахунку кількості секунд в годинах потрібно буде ввести будь-яку кількість годин Введіть кількість годин: "
-);
-console.log(typeof num);
-let sec = 3600 * num;
-alert(sec);
 
-document.getElementById("hour").innerHTML = num;
-document.getElementById("test").innerHTML = sec;
+let num1 = +prompt("Введіть перше число");
+let num2 = +prompt("Введіть друге число");
+let num3 = +prompt("Введіть третє число");
+
+let res = (num1 + num2 + num3) / 3;
+alert(res);
+
+document.getElementById("num").innerHTML = res;
