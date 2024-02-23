@@ -1,19 +1,12 @@
-alert(
-  'Для того щоб зробити якісь математичні операції Вам буде запропонованно ввести два числа. Для того щоб почати натисніть "ok"'
+confirm(
+  "Для розрахунку кількості секунд в годинах потрібно буде ввести будь-яку кількість годин "
 );
+let num = +prompt(
+  "Для розрахунку кількості секунд в годинах потрібно буде ввести будь-яку кількість годин Введіть кількість годин: "
+);
+console.log(typeof num);
+let sec = 3600 * num;
+alert(sec);
 
-let num1 = +prompt("Введіть перше число:");
-let num2 = +prompt("Введіть друге число:");
-
-let sum = num1 + num2;
-let sub = num1 - num2;
-let mul = num1 * num2;
-let dev = num1 / num2;
-let newD = dev.toFixed(2);
-
-alert(`
-Додавання: ${num1} + ${num2} = ${sum}
-Віднімання: ${num1} - ${num2} = ${sub}
-Множення: ${num1} * ${num2} = ${mul}
-Ділення: ${num1} / ${num2} = ${newD}
-`);
+document.getElementById("hour").innerHTML = num;
+document.getElementById("test").innerHTML = sec;
