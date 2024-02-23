@@ -7,6 +7,6 @@ let num2 = +prompt("Введіть друге число");
 let num3 = +prompt("Введіть третє число");
 
 let res = (num1 + num2 + num3) / 3;
-alert(res);
+alert(res.toFixed(2));
 
-document.getElementById("num").innerHTML = res;
+document.getElementById("num").innerHTML = res.toFixed(2);
