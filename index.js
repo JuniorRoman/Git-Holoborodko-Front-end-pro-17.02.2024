@@ -1,12 +1,17 @@
-confirm(
-  "Для того щоб розрахувати середнє арифметичне від чисел, пропоную Вам ввести 3 різні числа"
-);
+let numOrStr = prompt("input number or string");
+console.log(numOrStr);
 
-let num1 = +prompt("Введіть перше число");
-let num2 = +prompt("Введіть друге число");
-let num3 = +prompt("Введіть третє число");
 
-let res = (num1 + num2 + num3) / 3;
-alert(res.toFixed(2));
-
-document.getElementById("num").innerHTML = res.toFixed(2);
+switch (numOrStr && isNaN(+numOrStr)) {
+  case null:
+    console.log("ви скасували");
+    break;
+  case numOrStr.trim():
+    console.log("Empty String");
+    break;
+  case true:
+    console.log("number is Ba_NaN");
+    break;
+  default:
+    console.log("OK!");
+}
