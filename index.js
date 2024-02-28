@@ -39,16 +39,23 @@ switch (true) {
     }
 }
 
-switch (sport) {
-  case "Шахи":
-    sport = "Круто! Хочеш стати як " + "Магнус Карлсен";
+switch (true) {
+  case sport === null:
+  case sport.trim() === "":
+    sport = "Шкода, що Ви не захотіли ввести свій улюблений вид спорту";
     break;
-  case "Настільний теніс":
-    sport = "Круто! Хочеш стати як " + "Іван Май";
-    break;
-  case "Армреслінг":
-    sport = "Круто! Хочеш стати як " + "Олег Жох";
-    break;
-}
+  case city != "":
 
-alert(`${res} \n${city} \n ${sport}`);
+    switch (sport) {
+      case "Шахи":
+        sport = "Круто! Хочеш стати як " + "Магнус Карлсен";
+        break;
+      case "Настільний теніс":
+        sport = "Круто! Хочеш стати як " + "Іван Май";
+        break;
+      case "Армреслінг":
+        sport = "Круто! Хочеш стати як " + "Олег Жох";
+        break;
+    }
+}
+alert(`${res} \n${city} \n${sport}`);
