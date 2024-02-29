@@ -4,58 +4,44 @@ let sport = prompt(
   "Вкажіть Ваший улюбленний вид спорту з представленних: Шахи, Настільний теніс, Армреслінг"
 );
 
-let cityUa = "України";
-let cityUSA = "США";
-let cityUk = "Великобританії";
-let cap = "Ти живеш у столиці ";
-let cit = "Ти живеш у місті ";
-
-let currentYear = new Date().getFullYear();
-let res = currentYear - userYear;
-
-switch (true) {
-  case userYear === null:
-  case userYear.trim() === "":
-    res = "Шкода, що Ви не захотіли ввести свій рік народження ";
-    break;
-  case userYear != "":
-    res = `Тобі  ${res} р`;
+if (!userYear) {
+  res = "Шкода, що Ви не захотіли ввести свій рік народження";
+} else {
+  let currentYear = new Date().getFullYear();
+  var res = currentYear - userYear;
+  res = `Тобі  ${res} р`;
 }
 
-switch (true) {
-  case city === null:
-  case city.trim() === "":
-    city = "Шкода, що Ви не захотіли ввести своє місто";
-    break;
-  case city != "":
-    if (city === "Київ") {
-      city = cap + cityUa;
-    } else if (city === "Вашингтон") {
-      city = cap + cityUSA;
-    } else if (city === "Лондон") {
-      city = cap + cityUk;
-    } else {
-      city = cit + city;
-    }
+if (!city) {
+  city = "Шкода, що Ви не захотіли ввести своє місто";
+} else if (city === "Київ") {
+  let cap = "Ти живеш у столиці ";
+  city = cap + "України";
+} else if (city === "Вашингтон") {
+  city = cap + "США";
+} else if (city === "Лондон") {
+  city = cap + "Англії";
+} else {
+  city = "Ти живеш у місті " + city;
 }
 
-switch (true) {
-  case sport === null:
-  case sport.trim() === "":
-    sport = "Шкода, що Ви не захотіли ввести свій улюблений вид спорту";
-    break;
-  case city != "":
-
-    switch (sport) {
-      case "Шахи":
-        sport = "Круто! Хочеш стати як " + "Магнус Карлсен";
-        break;
-      case "Настільний теніс":
-        sport = "Круто! Хочеш стати як " + "Іван Май";
-        break;
-      case "Армреслінг":
-        sport = "Круто! Хочеш стати як " + "Олег Жох";
-        break;
-    }
+if (!sport) {
+  sport = "Шкода, що Ви не захотіли ввести свій улюблений вид спорту";
+} else {
+  if (sport == "Шахи") {
+    let kinds = "Магнус Карлсен";
+    sport = "Круто! Хочеш стати як " + kinds;
+  } else if (sport == "Настільний теніс") {
+    kinds = "Іван Май";
+    sport = "Круто! Хочеш стати як " + kinds;
+  } else if (sport == "Армреслінг") {
+    kinds = "Олег Жох";
+    sport = "Круто! Хочеш стати як " + kinds;
+  } 
 }
-alert(`${res} \n${city} \n${sport}`);
+
+alert(`
+${res} 
+${city}
+${sport}
+`)
