@@ -40,8 +40,9 @@ document.getElementById("mn").innerHTML = mult;
 /*Знайти середнє арифметичне всіх цілих чисел від 1 до 500*/
 let rez = 0;
 for (let i = 1; i <= 500; i++) {
-  rez = (rez + i) / 500;
+  rez = (rez + i);
 }
+rez = rez / 500;
 document.getElementById("rez").innerHTML = rez;
 
 /*Вивести суму лише парних чисел в діапазоні від 30 до 80*/
@@ -78,10 +79,10 @@ let j;
 for (let item of m) {
   if (item % 2 === 0) {
     k.push(item);
-    j = k.length;
   }
 }
-document.getElementById("j").innerHTML = j;
+j = k.length;
+document.getElementById("j").innerHTML = k;
 
 /*Знайти суму його парних дільників*/
 for (item of k) {
