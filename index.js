@@ -1,14 +1,27 @@
-let arr = [1, 2, 3, 4, 5, 6, 7];
-console.log(arr);
-function removeElement(arr, item) {
-  arr = arr.slice();
-  for (let i = 0; i < arr.length; i++) {
-    if (i == item) {
-      arr.splice(item, 1);
-    }
-  }
-  return console.log(arr);
+// Вивести числа від 20 до 30 через пропуск, використовуючи крок 0,5 (20 20,5 21 21,5….)
+let str = "";
+for (let i = 20; i < 30; i = i + 0.5) {
+  str += i + " ";
+}
+console.log(str);
+
+// Один долар коштує 27 гривень. Вивести дані з розрахунком вартості 10, 20, 30... 100 доларів
+let dol = 27;
+let rez;
+for (let i = 10; i <= 100; i = i + 10) {
+  rez = dol * i;
+  console.log(`Співвіднощення $ ${i} до грн ${rez}`);
 }
 
-removeElement(arr, 3);
-
+// Дане ціле число. Вивести всі цілі числа від 1 до 100, квадрат яких не перевищує числа N
+let num = 10;
+let i = 1;
+let res;
+while (i < num) {
+  res = i * i;
+  if (res <= num) {
+    console.log(i);
+  }
+  i++;
+}
+console.log(res);
