@@ -1,9 +1,10 @@
 let arr = [1, 2, 3, 4, 5, 6, 7];
-console.log(arr);
+
 
 function removeElement(arr, item) {
   arr.splice(item - 1, 1);
-  return console.log(arr);
+  return arr;
 }
 
-removeElement(arr, 2);
+removeElement(arr, 1);
+console.log(arr);
