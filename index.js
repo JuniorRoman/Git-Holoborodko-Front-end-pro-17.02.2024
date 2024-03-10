@@ -7,5 +7,5 @@ function removeElement(array, item) {
 }
 
 removeElement(arr, 2);
-removeElement(arr, 5);
-removeElement(arr, 1);
+// removeElement(arr, 5);
+// removeElement(arr, 1);
