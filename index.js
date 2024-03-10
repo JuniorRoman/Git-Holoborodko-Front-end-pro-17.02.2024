@@ -1,26 +1,14 @@
-const array = [1, 2, 3, 4, 5, 6, 7];
-const arr = [];
-
-// function removeElement(array, item) {
-//   for (let i = 0; i < array.length; i++) {
-//     if (array[i] !== item) {
-//       arr.push(i);
-//     }
-//   }
-// }
-
-
-function removeElement(array, item) {
-  for (let i = 0; i < array.length; i++){
-    if (array[i] == item) {
-      array.splice(item, 1);
-      // console.log(array);
+let arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(arr);
+function removeElement(arr, item) {
+  arr = arr.slice();
+  for (let i = 0; i < arr.length; i++) {
+    if (i == item) {
+      arr.splice(item, 1);
     }
   }
-  return array;
+  return console.log(arr);
 }
 
-removeElement(array, 1);
-console.log(array);
-removeElement(array, 5);
-console.log(array);
+removeElement(arr, 3);
+
