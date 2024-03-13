@@ -1,13 +1,13 @@
 // Рекурсивне зведення в ступінь
 
 function pow(num, degree) {
-  let result = 1;
+  let res = 1;
 
   for (let i = 0; i < degree; i++) {
-    result *= num;
+    res *= num;
   }
 
-  return result;
+  return res;
 }
 
 console.log(pow(2, 4));
