@@ -1,9 +1,8 @@
 // Рекурсивне зведення в ступінь
 
-function pow(x, n) {
+function pow(x, y) {
   let result = 1;
 
-  // множимо result на x n разів в циклі
   for (let i = 0; i < n; i++) {
     result *= x;
   }
