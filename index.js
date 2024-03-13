@@ -1,17 +1,20 @@
 let arr = [1, 2, 3, 4, 5, 6, 7];
+let ar = ["Twin", 4, "Ok", 7, 2];
 
 function removeElement(arr, item) {
+  // arr.toString();
   for (let i = 0; i < arr.length; i++) {
-    if (item <= arr.length) {
-      arr.splice(item - 1, 1);
-      break;
+    if (arr.at(item) !== -1) {
+      
+      return console.log(item);
+      // if (arr[i] === item) {
+      //   return i;
+      // } 
     } else {
-      return console.log(
-        `Спробуйте ввести меньше число від 1 до ${arr.length}`
-      );
+      console.log('no');
     }
   }
-  return console.log(arr);
+  return -1;
 }
 
-removeElement(arr, 1);
+console.log(removeElement(arr, 10));
