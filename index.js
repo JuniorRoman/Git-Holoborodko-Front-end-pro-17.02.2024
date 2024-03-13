@@ -1,10 +1,10 @@
 // Рекурсивне зведення в ступінь
 
-function pow(x, y) {
+function pow(num, degree) {
   let result = 1;
 
-  for (let i = 0; i < n; i++) {
-    result *= x;
+  for (let i = 0; i < degree; i++) {
+    result *= num;
   }
 
   return result;
