@@ -1,15 +1,5 @@
-// Реалізуйте функцію generateKey
+// Дано масив з елементами різних типів. Створити функцію яка вираховує середнє арифметичне лише числових елементів даного масиву
 
-const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+const arr = ['a', 'b', 'j', 'k', '1', '2', '34', '56', '7', '89'];
 
-let rez = '';
-let n;
-function generateKey(num, char) {
-  for (let i = 0; i < num; i++) {
-    n = Math.ceil(Math.random() * char.length);
-    rez += char.charAt(n);
-  }
-  return rez;
-}
-const key = generateKey(16, characters);
-console.log(key);
+
