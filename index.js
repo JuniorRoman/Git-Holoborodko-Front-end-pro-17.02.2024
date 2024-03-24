@@ -1,71 +1,74 @@
-"use strict";
+const arrayOfNumbers = [ 16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47 ];
 
-// Дано масив з елементами різних типів. Створити функцію яка вираховує середнє арифметичне лише числових елементів даного масиву
-let numbers = [10, 2, 3, "marge"];
+// Знайти суму та кількість позитивних елементів.
 
-const averageArray = (arr) => {
-  let num = arr.filter((value) => typeof value === "number");
+const posNumber = arrayOfNumbers.filter(el => el > 0);
 
-  return num.reduce((acc, value) => acc + value) / num.length;
-};
-console.log(averageArray(numbers));
+const posNum = posNumber.length;
 
-// Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y, рядок znak. У змінній znak може бути: +, -, *, /, %, ^ (ступінь ).Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак виходять від користувача
+const posSum = posNumber.reduce(function(acc, currentValue) {
+  return acc + currentValue;
+}, 0);
 
-function doMath(x, znak, y) {
-  switch (znak) {
-    case "+":
-      return x + y;
-    case "-":
-      return x - y;
-    case "*":
-      return x * y;
-    case "/":
-      return x / y;
-    case "%":
-      return x % y;
-    case "^":
-      return x ** y;
-  }
+console.log(`
+Сума позитивних елементів ${posSum} 
+Кількість позитивних елементів ${posNum}
+`);
+
+// Знайти мінімальний елемент масиву та його порядковий номер.
+
+const getMinFromArr = (arr, operat) => {
+  const elem = Math[operat](...arr);
+  const num = arr.indexOf(elem) + 1;
+  return {elem, num}
 }
-console.log(doMath(10, "+", 3));
 
-// Написати функцію заповнення даними користувача двомірного масиву. Довжину основного масиву і внутрішніх масивів задає користувач. Значення всіх елементів всіх масивів задає користувач.
+console.log(getMinFromArr(arrayOfNumbers, 'min'));
 
-const fillArray = (arrayLen) => {
-  if (arrayLen <= 0) {
-    return [];
-  } else {
-    const mainArr = fillArray(arrayLen - 1);
-    const itemLen = Number(prompt(`Введіть довжину підмасиву ${arrayLen}`));
-    mainArr.push(fillItems(itemLen));
-    return mainArr;
-  }
-};
+// Знайти максимальний елемент масиву та його порядковий номер.
+const maxNumber = getMinFromArr(arrayOfNumbers, "max");
+console.log(maxNumber);
 
-const fillItems = (subArrayLen) => {
-  if (subArrayLen <= 0) {
-    return [];
-  } else {
-    const subArr = fillItems(subArrayLen - 1);
-    const value = prompt("Enter item value");
-    subArr.push(value);
-    return subArr;
-  }
-};
+// Визначити кількість негативних елементів.
+const negNum = arrayOfNumbers.filter(el => el < 0).length;
 
-const lengthMainArr = Number(prompt("Введіть довжину масиву"));
-const userArr = fillArray(lengthMainArr);
+console.log(negNum);
 
-console.log(userArr);
+// Знайти кількість непарних позитивних елементів.
+const posOddNum = posNumber.filter(el => el % 2 !== 0);
+const posOddNumCount = posOddNum.length;
+console.log(posOddNumCount);
 
-// Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
+// Знайти кількість парних позитивних елементів.
+const positiveNum = posNumber.filter(el => el % 2 === 0);
+const positiveNumCount = positiveNum.length;
+console.log(positiveNumCount);
 
-const removeSymb = ([...str], symbArr) => {
-  let filterSymb = str.filter((char) => {
-    return symbArr.indexOf(char) === -1;
-  });
-  return filterSymb.join("");
-};
+// Знайти суму парних позитивних елементів.
+const sumPositive = positiveNum.reduce((acc, currentValue) => {
+  return acc + currentValue;
+}, 0);
+console.log(sumPositive);
 
-console.log(removeSymb("hello world privat", ["o", "d", "r"]));
+// Знайти суму непарних позитивних елементів.
+const sumOddPositive = posOddNum.reduce((acc, currentValue) => {
+  return acc + currentValue;
+}, 0);
+console.log(sumOddPositive);
+
+// Знайти добуток позитивних елементів.
+const multiNum = posNumber.reduce((acc, num) => {
+  return acc * num;
+}, 1);
+console.log(multiNum);
+
+// Знайти найбільший серед елементів масиву, остальні обнулити.
+const resetMaxNum = arrayOfNumbers.map((current) =>
+  current !== maxNumber.elem ? 0 : current
+);
+
+console.log("Оригінал масиву\n", arrayOfNumbers);
+console.log(
+  "Найбільший зоставляємо\n",
+  resetMaxNum
+);
