@@ -32,32 +32,6 @@ console.log(doMath(10, "+", 3));
 
 // Написати функцію заповнення даними користувача двомірного масиву. Довжину основного масиву і внутрішніх масивів задає користувач. Значення всіх елементів всіх масивів задає користувач.
 
-const fillArray = (arrayLen) => {
-  if (arrayLen <= 0) {
-    return [];
-  } else {
-    const mainArr = fillArray(arrayLen - 1);
-    const itemLen = Number(prompt(`Введіть довжину підмасиву ${arrayLen}`));
-    mainArr.push(fillItems(itemLen));
-    return mainArr;
-  }
-};
-
-const fillItems = (subArrayLen) => {
-  if (subArrayLen <= 0) {
-    return [];
-  } else {
-    const subArr = fillItems(subArrayLen - 1);
-    const value = prompt("Enter item value");
-    subArr.push(value);
-    return subArr;
-  }
-};
-
-const lengthMainArr = Number(prompt("Введіть довжину масиву"));
-const userArr = fillArray(lengthMainArr);
-
-console.log(userArr);
 
 // Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
 
